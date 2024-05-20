@@ -35,7 +35,7 @@ def hello():
 
 @app.get('/status')
 def status():
-    return {"status":"ok"}
+    return {"status":"Funciona"}
 
 @app.get('/students/', response_model=list[schemas.StudentOut])
 def user_list():
