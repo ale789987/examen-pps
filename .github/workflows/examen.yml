@@ -17,10 +17,12 @@ jobs:
        uses: actions/setup-python@v4
        with:
         python-version: "3.11"
-     - name: Run pylint
+     - name: Install pylint
        run: |
         pip install pylint
-        args: "--disable=C0116,W0622"
+     - name: Run pylint
+       run: |
+        pylint --disable=C0116,W0622 .
 
   build:
     name: Docker push and build
