@@ -61,11 +61,13 @@ jobs:
             if curl -s http://localhost:80/status; then
               echo "Aplicacion lanzada correctamente"
             else
-              echo "Failed to run the application"
+              echo "la aplicacion no se pudo lanzar"
+              exit 1
             fi
             sleep 10
             if curl -s http://localhost:80/studens/1; then
               echo "Aplicacion lanzada correctamente"
             else
-              echo "Failed to run the application"
+              echo "La aplicación no se pudo lanzar"
+              exit 1
             fi
