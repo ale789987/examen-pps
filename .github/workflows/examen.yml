@@ -1,4 +1,4 @@
-name: Docker y AWS
+name: Docker , AWS , Lint, test
 
 on:
   pull_request:
@@ -7,6 +7,21 @@ on:
       - src/**
 
 jobs:
+  Lint:
+    name: Lint con pylint
+    runs-on: ubuntu-latest
+    steps:
+     - name: Check out source repository
+       uses: actions/checkout@v3
+     - name: Set up Python environment
+       uses: actions/setup-python@v4
+       with:
+        python-version: "3.11"
+     - name: pylint
+       uses: py-actions/pylint@v2
+       with:
+        args: "--disable=C0116,W0622"
+
   build:
     name: Docker push and build
     runs-on: ubuntu-latest
