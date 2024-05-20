@@ -18,7 +18,6 @@ jobs:
        with:
         python-version: "3.11"
      - name: Run pylint
-       uses: actions/checkout@v2
        run: |
         pip install pylint
         args: "--disable=C0116,W0622"
